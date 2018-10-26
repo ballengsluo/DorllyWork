@@ -1,0 +1,236 @@
+﻿
+/* =========== JsInputText,JsInputDate =========== */
+/* 文本框正常状态 */
+.JsInputText_normal
+{
+  	border:solid 1px #acb2cc;
+  	background-position:1px 1px;
+	height:42px;
+	width:250px;
+}
+/* 文本框获得焦点状态 */
+.JsInputText_focus
+{
+	border:solid 1px #578ec4;
+	background-position:1px 1px;
+	height:42px;
+	width:250px;
+}
+/* =========== JsCalendar =========== */
+/*外边框，整体背景*/
+.JsCalendar
+{
+	position: relative;
+	display: none;
+	border:solid 1px #7197ca;
+	background-color: #ffffff;
+	cursor: default;
+	z-index: 100;
+}
+/*主表格*/
+.JsCalendar table
+{
+	font-size: 14px;
+	cursor: default;
+	border-collapse:separate;
+	width:240px;
+}
+/*标题(今天日期)样式*/
+.JsCalendar thead .title
+{
+    height:24px;
+	border:solid 1px #7197ca;
+	background-color: #edf2f8;
+	text-align:center ;
+}
+/*周*/
+.JsCalendar thead .name
+{
+	width: 50px;
+    height:24px;
+    text-align: center;
+    border:solid 1px #618bc5;
+    color: #ffffff;
+    background-color: #618bc5;
+    padding-top:2px;
+}
+/*日*/
+.JsCalendar tbody .day
+{
+	border:solid 1px #618bc5;
+	width: 50px;
+    height:24px;
+	text-align: center;
+	color:#3e5468;
+	background-color: #f8f8fc;
+	padding-top:1px;
+	padding-bottom:1px;
+	font-size: 14px;
+}
+/*今天*/
+.JsCalendar tbody td.today
+{
+    height:24px;
+	background-color: #d5ecd2;
+}
+/*选择的日*/
+.JsCalendar tbody td.selected
+{
+    height:24px;
+	background-color: #9cbade;
+}
+/*鼠标指向的单元格*/
+.JsCalendar tbody td.hilite
+{
+    height:24px;
+	border:solid 1px #000000;
+	background-color:#dddddd;
+	cursor:pointer;
+}
+/*鼠标指向的行*/
+.JsCalendar tbody .rowhilite td 
+{
+}
+/*其他月份的日期*/
+.JsCalendar tbody .day.othermonth 
+{
+    height:24px;
+	color: #b5c5d2;
+	background-color:#ffffff;
+	font-size: 14px;
+}
+/*按钮样式*/
+.JsCalendar .button1
+{
+    height:24px;
+	padding-top:3px;
+	padding-left:3px;
+	text-align: center;
+	border:solid 1px #7197ca;
+	background-color: #edf2f8;
+	cursor:pointer;
+}
+/*按钮指向样式*/
+.JsCalendar thead .hilite
+{
+    height:24px;
+	border-top:solid 1px #7197ca;
+	border-left:solid 1px #7197ca;
+	border-right:solid 1px #7197ca;
+	border-bottom:solid 1px #ff9900;
+	cursor:pointer;
+}
+/*按钮点击样式*/
+.JsCalendar thead .active
+{
+    height:24px;
+	border:solid 1px #7197ca;
+	background-color: #ffffff;
+	cursor:pointer;
+}
+/*年月下拉框*/
+.JsCalendar .combo
+{
+    height:24px;
+	border:solid 1px #7197ca;
+	background-color: #f8f8fc;
+	position: absolute;
+	display: none;
+	top: 0px;
+	left: 0px;
+	cursor: default;
+	font-size: 14px;
+	padding: 1px;
+}
+/*选择的年月*/
+.JsCalendar .combo .active
+{
+    height:24px;
+	padding: 0px;
+	border:solid 1px #9cbade;
+	background-color: #9cbade;
+}
+/*鼠标指向的年月*/
+.JsCalendar .combo .hilite
+{
+	background-color: #048;
+	color: #fea;
+    height:24px;
+}
+/*年月单元格*/
+.JsCalendar .combo .label-IEfix 
+{
+	text-align: center;
+	padding: 1px;
+	width: 90px;
+    height:24px;
+}
+/* =========== JsInputCombo =========== */
+/* 文本区样式 */
+.JsInputCombo_clsTextFieldCell
+{
+    height:24px;
+	background-color:white;
+	border:solid 1px #acb2cc;
+}
+/* 下拉按钮样式 */
+.JsInputCombo_clsDropDownCell
+{
+    height:24px;
+	background-image:url(../images/menu/buttonBar.bmp);
+	border-top:solid 1px #acb2cc;
+	border-bottom:solid 1px #acb2cc;
+	border-right:solid 1px #acb2cc;
+}
+/* 下拉按钮文本样式 */
+.JsInputCombo_clsDropDownCellText
+{
+    height:24px;
+	font-family:Webdings;
+	font-size:12pt;
+	padding-left:3px;
+}
+/* 下拉按钮文本样式 */
+.JsInputCombo_clsDropDownCellText_down
+{
+    height:24px;
+	font-family:Webdings;
+	font-size:12pt;
+	padding-left:3px;
+}
+/* 下拉区样式 */
+.JsInputCombo_clsListItem
+{
+	background-color:white;
+	border:solid 1px #acb2cc;
+}
+/* 下拉区文本样式 */
+.JsInputCombo_clsListItemText
+{
+	font-size:8pt;
+}
+/* =========== JsPurviewButton =========== */
+/* 按钮正常样式 */
+.JsInputButton_normal
+{
+	font-family: verdana;
+	font-size: 9pt;
+	cursor: hand;
+	height: 44px;
+	background-color:Transparent;
+	border-width:0px;
+	color:#000100;
+	width:120px;
+}
+/* 鼠标指向按钮之后的样式 */
+.JsInputButton_over
+{
+	font-family: verdana;
+	font-size: 12pt;
+	cursor: hand;
+	height: 22px;
+	background-color:Transparent;
+	border-width:0px;
+	color:#000100;
+	width:120px;
+}

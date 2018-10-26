@@ -1,0 +1,788 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ExecuteNonQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cmdText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteNonQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExecuteNonQueryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cmdText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PopulateDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PopulateDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerDateTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerDateTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetServerDateTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromParkinLot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PRTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MCTableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Guid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromParkinLotResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenOrderFromParkinLotResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromConferenceRepair">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResourceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ResourceName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromConferenceRepairResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenOrderFromConferenceRepairResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromCompRepair">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromCompRepairResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenOrderFromCompRepairResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromCompRepairForWO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustNo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenOrderFromCompRepairForWOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenOrderFromCompRepairForWOResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMeterInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMeterInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMeterInfoResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="meterRMID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="readout" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="digit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MeterReadout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ReadoutType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LastReadout" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Readout" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="JoinReadings" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="Readings" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ImgByte" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MeterReadoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterReadoutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_Resourse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_ResourseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsList_ResourseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_Room">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_RoomResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsList_RoomResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_Room_Charts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_Room_ChartsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsList_Room_ChartsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOccupancyRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOccupancyRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOccupancyRateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_WP_Charts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_WP_ChartsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsList_WP_ChartsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_WP_Charts1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MinMonth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MaxMonth" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_WP_Charts1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsList_WP_Charts1Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_BB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="KEY" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsList_BBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatisticsList_BBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ExecuteNonQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteNonQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="PopulateDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:PopulateDataSet" />
+  </wsdl:message>
+  <wsdl:message name="PopulateDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:PopulateDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerDateTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerDateTime" />
+  </wsdl:message>
+  <wsdl:message name="GetServerDateTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerDateTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromParkinLotSoapIn">
+    <wsdl:part name="parameters" element="tns:GenOrderFromParkinLot" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromParkinLotSoapOut">
+    <wsdl:part name="parameters" element="tns:GenOrderFromParkinLotResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromConferenceRepairSoapIn">
+    <wsdl:part name="parameters" element="tns:GenOrderFromConferenceRepair" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromConferenceRepairSoapOut">
+    <wsdl:part name="parameters" element="tns:GenOrderFromConferenceRepairResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromCompRepairSoapIn">
+    <wsdl:part name="parameters" element="tns:GenOrderFromCompRepair" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromCompRepairSoapOut">
+    <wsdl:part name="parameters" element="tns:GenOrderFromCompRepairResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromCompRepairForWOSoapIn">
+    <wsdl:part name="parameters" element="tns:GenOrderFromCompRepairForWO" />
+  </wsdl:message>
+  <wsdl:message name="GenOrderFromCompRepairForWOSoapOut">
+    <wsdl:part name="parameters" element="tns:GenOrderFromCompRepairForWOResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMeterInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMeterInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMeterInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMeterInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="MeterReadoutSoapIn">
+    <wsdl:part name="parameters" element="tns:MeterReadout" />
+  </wsdl:message>
+  <wsdl:message name="MeterReadoutSoapOut">
+    <wsdl:part name="parameters" element="tns:MeterReadoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_ResourseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_Resourse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_ResourseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_ResourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_RoomSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_Room" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_RoomSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_RoomResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_Room_ChartsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_Room_Charts" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_Room_ChartsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_Room_ChartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOccupancyRateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOccupancyRate" />
+  </wsdl:message>
+  <wsdl:message name="GetOccupancyRateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOccupancyRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_WP_ChartsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_WP_Charts" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_WP_ChartsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_WP_ChartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_WP_Charts1SoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_WP_Charts1" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_WP_Charts1SoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_WP_Charts1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_BBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_BB" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsList_BBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsList_BBResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="ExecuteNonQuery">
+      <wsdl:input message="tns:ExecuteNonQuerySoapIn" />
+      <wsdl:output message="tns:ExecuteNonQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDataSet">
+      <wsdl:input message="tns:PopulateDataSetSoapIn" />
+      <wsdl:output message="tns:PopulateDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <wsdl:input message="tns:GetServerDateTimeSoapIn" />
+      <wsdl:output message="tns:GetServerDateTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromParkinLot">
+      <wsdl:input message="tns:GenOrderFromParkinLotSoapIn" />
+      <wsdl:output message="tns:GenOrderFromParkinLotSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromConferenceRepair">
+      <wsdl:input message="tns:GenOrderFromConferenceRepairSoapIn" />
+      <wsdl:output message="tns:GenOrderFromConferenceRepairSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromCompRepair">
+      <wsdl:input message="tns:GenOrderFromCompRepairSoapIn" />
+      <wsdl:output message="tns:GenOrderFromCompRepairSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromCompRepairForWO">
+      <wsdl:input message="tns:GenOrderFromCompRepairForWOSoapIn" />
+      <wsdl:output message="tns:GenOrderFromCompRepairForWOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterInfo">
+      <wsdl:input message="tns:GetMeterInfoSoapIn" />
+      <wsdl:output message="tns:GetMeterInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MeterReadout">
+      <wsdl:input message="tns:MeterReadoutSoapIn" />
+      <wsdl:output message="tns:MeterReadoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Resourse">
+      <wsdl:input message="tns:GetStatisticsList_ResourseSoapIn" />
+      <wsdl:output message="tns:GetStatisticsList_ResourseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Room">
+      <wsdl:input message="tns:GetStatisticsList_RoomSoapIn" />
+      <wsdl:output message="tns:GetStatisticsList_RoomSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Room_Charts">
+      <wsdl:input message="tns:GetStatisticsList_Room_ChartsSoapIn" />
+      <wsdl:output message="tns:GetStatisticsList_Room_ChartsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOccupancyRate">
+      <wsdl:input message="tns:GetOccupancyRateSoapIn" />
+      <wsdl:output message="tns:GetOccupancyRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_WP_Charts">
+      <wsdl:input message="tns:GetStatisticsList_WP_ChartsSoapIn" />
+      <wsdl:output message="tns:GetStatisticsList_WP_ChartsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_WP_Charts1">
+      <wsdl:input message="tns:GetStatisticsList_WP_Charts1SoapIn" />
+      <wsdl:output message="tns:GetStatisticsList_WP_Charts1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_BB">
+      <wsdl:input message="tns:GetStatisticsList_BBSoapIn" />
+      <wsdl:output message="tns:GetStatisticsList_BBSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap:operation soapAction="http://tempuri.org/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDataSet">
+      <soap:operation soapAction="http://tempuri.org/PopulateDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <soap:operation soapAction="http://tempuri.org/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromParkinLot">
+      <soap:operation soapAction="http://tempuri.org/GenOrderFromParkinLot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromConferenceRepair">
+      <soap:operation soapAction="http://tempuri.org/GenOrderFromConferenceRepair" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromCompRepair">
+      <soap:operation soapAction="http://tempuri.org/GenOrderFromCompRepair" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromCompRepairForWO">
+      <soap:operation soapAction="http://tempuri.org/GenOrderFromCompRepairForWO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterInfo">
+      <soap:operation soapAction="http://tempuri.org/GetMeterInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeterReadout">
+      <soap:operation soapAction="http://tempuri.org/MeterReadout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Resourse">
+      <soap:operation soapAction="http://tempuri.org/GetStatisticsList_Resourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Room">
+      <soap:operation soapAction="http://tempuri.org/GetStatisticsList_Room" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Room_Charts">
+      <soap:operation soapAction="http://tempuri.org/GetStatisticsList_Room_Charts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOccupancyRate">
+      <soap:operation soapAction="http://tempuri.org/GetOccupancyRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_WP_Charts">
+      <soap:operation soapAction="http://tempuri.org/GetStatisticsList_WP_Charts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_WP_Charts1">
+      <soap:operation soapAction="http://tempuri.org/GetStatisticsList_WP_Charts1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_BB">
+      <soap:operation soapAction="http://tempuri.org/GetStatisticsList_BB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap12:operation soapAction="http://tempuri.org/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PopulateDataSet">
+      <soap12:operation soapAction="http://tempuri.org/PopulateDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerDateTime">
+      <soap12:operation soapAction="http://tempuri.org/GetServerDateTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromParkinLot">
+      <soap12:operation soapAction="http://tempuri.org/GenOrderFromParkinLot" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromConferenceRepair">
+      <soap12:operation soapAction="http://tempuri.org/GenOrderFromConferenceRepair" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromCompRepair">
+      <soap12:operation soapAction="http://tempuri.org/GenOrderFromCompRepair" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenOrderFromCompRepairForWO">
+      <soap12:operation soapAction="http://tempuri.org/GenOrderFromCompRepairForWO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetMeterInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MeterReadout">
+      <soap12:operation soapAction="http://tempuri.org/MeterReadout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Resourse">
+      <soap12:operation soapAction="http://tempuri.org/GetStatisticsList_Resourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Room">
+      <soap12:operation soapAction="http://tempuri.org/GetStatisticsList_Room" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_Room_Charts">
+      <soap12:operation soapAction="http://tempuri.org/GetStatisticsList_Room_Charts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOccupancyRate">
+      <soap12:operation soapAction="http://tempuri.org/GetOccupancyRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_WP_Charts">
+      <soap12:operation soapAction="http://tempuri.org/GetStatisticsList_WP_Charts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_WP_Charts1">
+      <soap12:operation soapAction="http://tempuri.org/GetStatisticsList_WP_Charts1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsList_BB">
+      <soap12:operation soapAction="http://tempuri.org/GetStatisticsList_BB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:8010/api/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:8010/api/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

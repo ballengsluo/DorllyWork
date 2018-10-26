@@ -1,0 +1,13 @@
+﻿
+.paginat {padding:0px; margin-top:8px; clear:both; height:32px; clear:both;}
+.paginat ul{margin:0; padding:0; text-align:left; font-size:9pt; font-family:宋体,Arial, Helvetica, sans-serif;}
+.paginat li {float:left; list-style:none; margin:5px 2px 5px 2px;}
+.paginat li b{color:#666; display:block; padding:4px 5px 2px 5px; text-decoration:none;}
+.paginat li a {color:#666; display:block; border:1px solid #CCC; padding:2px 5px 2px 5px; text-decoration:none;}
+.paginat li a:hover, .pagination a:active{border:1px solid #CCC; color:#666; background-color:#ADDDF3; cursor:pointer;}
+.paginat li.currentpage,.pagination li.disablepage {padding:2px 5px 2px 5px;}
+.paginat li.currentpage{font-weight:bold; border:1px solid #CCC; background-color:#F1F1F1; color:#666;}
+.paginat li.disablepage{border:1px solid #CCC; color:#666;}
+.paginat li.nextpage{font-weight:bold;}
+.paginat li.morelist {font-size:9pt;}
+.jumpbtn {height: 25px; width: 40px; line-height: 25px; padding: 1px 1px;}

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../../css/H-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/H-ui.admin.css" rel="stylesheet" type="text/css" />
+    <link href="../../lib/iconfont/iconfont.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="dialog" class="pt-5 pr-20 pb-5 pl-20">
+        <form method="post" id="upload" action="upload.ashx" enctype="multipart/form-data">
+            <input type="file" name="photofile" id="photofile" style="width:300px; margin:40px 40px 20px 20px; height:40px;" />
+            <a href="javascript:;" onclick="upload()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe642;</i> 上传</a>
+            <a href="javascript:;" onclick="closeup()" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe6a6;</i> 取消</a> 
+        </form>
+    </div>
+    <script type="text/javascript" src="../../jscript/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="../../jscript/script_common.js"></script>
+    <script type="text/javascript" src="../../jscript/json2.js"></script>
+    <script type="text/javascript" src="../../jscript/jquery-form.js"></script>
+    <script type="text/javascript" src="../../lib/layer/layer.js"></script> 
+    <script type="text/javascript">
+        
+        function closeup() {
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+            return;
+        }
+        
+        function upload() {
+            var path = $('#photofile').val();
+            if (path == '') return;
+
+            $("#upload").ajaxSubmit({
+                url: "Upload.ashx?action=" + getQueryString("action") + "&filename=" + escape(path),
+                type: "post",
+                dataType: "json",
+                contentType: "application/x-www-form-urlencoded;charset=utf-8",
+                success: function (data) {
+                    if (data.retCode == 0) {
+                        window.parent.showPic(data.newname, getQueryString("id"));
+                    }
+                    else {
+                        layer.alert(data.retInfo);
+                    }
+                },
+                error: function () {
+                    layer.msg("数据加载有误！");
+                }
+            });
+        }        
+    </script>
+
+</body>
+</html>
