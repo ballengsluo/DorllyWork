@@ -2534,7 +2534,7 @@ namespace project.Presentation.Api
                                 decimal readout = 0;
                                 int digit = 0;
                                 OrderService.Service service = new OrderService.Service();
-                                //service.Url = dopath;
+                                service.Url = ConfigurationManager.AppSettings["OrderServiceUrl"].ToString();
                                 string InfoMsg = service.GetMeterInfo(list.meterNo, "6E5F0C851FD4", out meterRMID, out readout, out digit);
                                 if (InfoMsg != "")
                                 {
@@ -2562,6 +2562,7 @@ namespace project.Presentation.Api
                         {
                             try
                             {
+
                                 if (Request.Files.Count > 0)
                                 {
                                     //文件类型判断
@@ -2584,6 +2585,7 @@ namespace project.Presentation.Api
                                         decimal joinReadings = ParseDecimalForString(Request.Params["joinReadings"].ToString());
                                         decimal readings = ParseDecimalForString(Request.Params["readings"].ToString());
                                         OrderService.Service service = new OrderService.Service();
+                                        service.Url = ConfigurationManager.AppSettings["OrderServiceUrl"].ToString();
                                         string InfoMsg = service.MeterReadout(meterNo,
                                             readoutType,
                                             lastReadout,
@@ -2615,7 +2617,7 @@ namespace project.Presentation.Api
                                 {
                                     meterReadout list = JSON.meterReadout(str)[0];
                                     OrderService.Service service = new OrderService.Service();
-                                    //service.Url = dopath;
+                                    service.Url = ConfigurationManager.AppSettings["OrderServiceUrl"].ToString();
                                     string InfoMsg = service.MeterReadout(list.meterNo, list.readoutType, list.lastReadout, list.readout, list.joinReadings, list.readings, user.Entity.UserName, "6E5F0C851FD4", null);
                                     if (InfoMsg != "")
                                     {

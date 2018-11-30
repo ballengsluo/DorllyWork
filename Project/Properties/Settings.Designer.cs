@@ -36,7 +36,7 @@ namespace project.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8010/api/Service.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://120.76.154.6/order/api/Service.asmx")]
         public string project_OrderService_Service {
             get {
                 return ((string)(this["project_OrderService_Service"]));

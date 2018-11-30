@@ -338,10 +338,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:8010/api/Service.asmx">
+    <WebReferenceUrl Include="http://120.76.154.6/order/api/Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\OrderService\</RelPath>
-      <UpdateFromURL>http://localhost:8010/api/Service.asmx</UpdateFromURL>
+      <UpdateFromURL>http://120.76.154.6/order/api/Service.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

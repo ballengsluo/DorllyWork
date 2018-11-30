@@ -6,7 +6,7 @@
       <Value Profile="(Default)">http://wx.dorlly.com/api/AppService.asmx</Value>
     </Setting>
     <Setting Name="project_OrderService_Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:8010/api/Service.asmx</Value>
+      <Value Profile="(Default)">http://120.76.154.6/order/api/Service.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>
